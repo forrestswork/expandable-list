@@ -13,6 +13,6 @@ export class ExpandableListItemComponent {
     if (! this.item) {
       return undefined;
     }
-    return Object.keys(this.item.activity).map(key => ({key, value: this.item ? this.item.activity[key] : ''}))
+    return Object.keys(this.item.activity).map(key => ({key, value: this.item?.activity[key]}))
   }
 }
