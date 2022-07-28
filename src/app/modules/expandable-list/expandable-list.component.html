@@ -1,18 +1,18 @@
 <div class="expandable-list-wrapper">
   <div class="expandable-list-header">
+    <div class="title">
+      <ng-content></ng-content>
+    </div>
     <button (click)="toggle()">
       {{expanded ? '-' : '+'}}
     </button>
-    <ng-content></ng-content>
   </div>
   <div class="expandable-list-content" *ngIf="expanded">
     <div class="loading" *ngIf="status === 'loading'">
       Loading data...
     </div>
     <div class="expandable-list">
-      <div class="expandable-list-item" *ngFor="let item of data$ | async">
-        {{item.fullName}}
-      </div>
+      <app-expandable-list-item *ngFor="let item of data$ | async" [item]="item"></app-expandable-list-item>
     </div>
   </div>
 </div>

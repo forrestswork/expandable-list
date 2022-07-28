@@ -1,0 +1,8 @@
+<div class="expandable-list-item" *ngIf="item">
+  <h3>{{item.fullName}} <small>{{item.isoDate | date: 'medium'}}</small></h3>
+  <div class="details">
+    <div class="detail" *ngFor="let detail of details">
+      <label>{{detail.key}}</label> {{detail.value}}
+    </div>
+  </div>
+</div>

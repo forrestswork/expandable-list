@@ -1,0 +1,27 @@
+.expandable-list-item{
+  border-top: #333 1px solid;
+}
+
+.details{
+  display: flex;
+}
+
+h3{
+  margin: 1rem 0 .5rem 0;
+  small{
+    font-weight: normal;
+    font-size: .8rem;
+    color: #999
+  }
+}
+
+.detail{
+  margin: 0 1rem 1rem 0;
+  font-size: .8rem;
+  color: #666;
+}
+
+label{
+  font-weight: bold;
+}
+
