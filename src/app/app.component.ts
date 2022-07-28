@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {ListData, ListLoader} from './modules/expandable-list/expandable-list.component';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'expandable-list';
+  public readonly dataSource: ListLoader;
+
+  constructor(private http: HttpClient) {
+    this.dataSource = () => http.get<ListData[]>(environment.testApiEndpoint);
+  }
 }
